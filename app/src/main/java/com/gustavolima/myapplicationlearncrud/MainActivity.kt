@@ -1,5 +1,6 @@
 package com.gustavolima.myapplicationlearncrud
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.gustavolima.myapplicationlearncrud.databinding.ActivityMainBinding
@@ -18,19 +19,31 @@ class MainActivity : AppCompatActivity() {
             generateNumbers()
 
 
-
         }
 
     }
 
 
     private fun generateNumbers() {
-        binding.editTextNumber1.setText(Random.nextInt(1, 60).toString())
-        binding.editTextNumber2.setText(Random.nextInt(1, 60).toString())
-        binding.editTextNumber3.setText(Random.nextInt(1, 60).toString())
-        binding.editTextNumber4.setText(Random.nextInt(1, 60).toString())
-        binding.editTextNumber5.setText(Random.nextInt(1, 60).toString())
-        binding.editTextNumber6.setText(Random.nextInt(1, 60).toString())
+        var numbers = generateRandomNumbers()
+
+        binding.editTextNumber1.setText(numbers[0].toString())
+        binding.editTextNumber2.setText(numbers[1].toString())
+        binding.editTextNumber3.setText(numbers[2].toString())
+        binding.editTextNumber4.setText(numbers[3].toString())
+        binding.editTextNumber5.setText(numbers[4].toString())
+        binding.editTextNumber6.setText(numbers[5].toString())
     }
+
+
+    private fun generateRandomNumbers(): List<Int> {
+        val randomNumbers = mutableSetOf<Int>()
+        while (randomNumbers.size < 6) {
+            val randomNumber = Random.nextInt(1, 60)
+            randomNumbers.add(randomNumber)
+        }
+        return generateRandomNumbers().toList()
+    }
+
 
 }
