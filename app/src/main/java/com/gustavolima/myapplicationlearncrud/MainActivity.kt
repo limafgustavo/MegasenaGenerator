@@ -3,6 +3,7 @@ package com.gustavolima.myapplicationlearncrud
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.gustavolima.myapplicationlearncrud.databinding.ActivityMainBinding
 import kotlin.random.Random
 
@@ -15,12 +16,13 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonGenerate.setOnClickListener {
 
-
             generateNumbers()
-
 
         }
 
+        binding.imageCopy.setOnClickListener {
+            Toast.makeText(this,"Copiado com sucesso.",Toast.LENGTH_SHORT).show()
+        }
     }
 
 
@@ -42,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             val randomNumber = Random.nextInt(1, 60)
             randomNumbers.add(randomNumber)
         }
-        return generateRandomNumbers().toList()
+        return randomNumbers.toList().sorted()
     }
 
 
