@@ -1,6 +1,9 @@
 package com.gustavolima.myapplicationlearncrud
 
 import android.annotation.SuppressLint
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -21,14 +24,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.imageCopy.setOnClickListener {
-            Toast.makeText(this,"Copiado com sucesso.",Toast.LENGTH_SHORT).show()
+            copyNumbers()
         }
     }
 
 
     private fun generateNumbers() {
         var numbers = generateRandomNumbers()
-
         binding.editTextNumber1.setText(numbers[0].toString())
         binding.editTextNumber2.setText(numbers[1].toString())
         binding.editTextNumber3.setText(numbers[2].toString())
@@ -45,6 +47,15 @@ class MainActivity : AppCompatActivity() {
             randomNumbers.add(randomNumber)
         }
         return randomNumbers.toList().sorted()
+    }
+
+    private fun copyNumbers() {
+
+        var numbersCopy =
+            binding.editTextNumber1.text.toString() + "." + binding.editTextNumber2.text.toString() + "." + binding.editTextNumber3.text.toString() + "." + binding.editTextNumber4.text.toString() + "." + binding.editTextNumber5.text.toString() + "." + binding.editTextNumber6.text.toString()
+        val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        clipboardManager.setPrimaryClip(ClipData.newPlainText("label", numbersCopy))
+        Toast.makeText(this, "Copiado com sucesso.", Toast.LENGTH_SHORT).show()
     }
 
 
