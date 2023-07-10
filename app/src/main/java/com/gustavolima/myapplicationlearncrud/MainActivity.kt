@@ -18,9 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.buttonGenerate.setOnClickListener {
-
             generateNumbers()
-
         }
 
         binding.imageCopy.setOnClickListener {
@@ -51,11 +49,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun copyNumbers() {
 
-        var numbersCopy =
-            binding.editTextNumber1.text.toString() + "." + binding.editTextNumber2.text.toString() + "." + binding.editTextNumber3.text.toString() + "." + binding.editTextNumber4.text.toString() + "." + binding.editTextNumber5.text.toString() + "." + binding.editTextNumber6.text.toString()
-        val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-        clipboardManager.setPrimaryClip(ClipData.newPlainText("label", numbersCopy))
-        Toast.makeText(this, "Copiado com sucesso.", Toast.LENGTH_SHORT).show()
+        if (binding.editTextNumber1.text.toString() == "") {
+            Toast.makeText(this, "Os números ainda não foram gerados.", Toast.LENGTH_SHORT).show()
+        } else {
+            var numbersCopy =
+                binding.editTextNumber1.text.toString() + "." + binding.editTextNumber2.text.toString() + "." + binding.editTextNumber3.text.toString() + "." + binding.editTextNumber4.text.toString() + "." + binding.editTextNumber5.text.toString() + "." + binding.editTextNumber6.text.toString()
+
+            val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            clipboardManager.setPrimaryClip(ClipData.newPlainText("label", numbersCopy))
+            Toast.makeText(this, "Copiado com sucesso.", Toast.LENGTH_SHORT).show()
+        }
     }
 
 
