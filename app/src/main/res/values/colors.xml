@@ -3,4 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="green">#01AC66</color>
+    <color name="my_light_primary">#01AC66</color>
 </resources>
