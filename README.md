@@ -1,11 +1,10 @@
 # MegasenaGenerator
 
-MegasenaGenerator is a simple Android app that generates random numbers and allows users to copy the generated numbers to the clipboard. The app generates six random numbers between 1 and 60 and displays them in individual EditText fields. Users can then copy the generated numbers in dot-separated format to use as needed.
-
-
 ## Introduction
 
 MegasenaGenerator is a learning project that demonstrates basic Android development concepts, including generating random numbers, updating UI elements programmatically, and interacting with the clipboard.
+
+The app generates six random numbers between 1 and 60 and displays them in individual EditText fields. Users can then copy the generated numbers in dot-separated format to use as needed.
 
 ## Getting Started
 ## Features
@@ -42,6 +41,3 @@ MegasenaGenerator is a learning project that demonstrates basic Android developm
 
 Contributions to the LearnCRUD project are welcome! If you find any bugs or have suggestions for improvements, feel free to create a pull request.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
