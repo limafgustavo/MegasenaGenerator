@@ -1,4 +1,4 @@
-# MegasenaGenerator
+# Megasena Generator
 
 ## Introduction
 
