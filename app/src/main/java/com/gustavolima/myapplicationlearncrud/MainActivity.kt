@@ -1,6 +1,5 @@
 package com.gustavolima.myapplicationlearncrud
 
-import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
